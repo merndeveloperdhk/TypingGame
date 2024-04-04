@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My special game</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.9.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <main class="bg-black min-h-screen bg-[url(./images/background.png)] bg-no-repeat bg-center">
+        <!-- Home part -->
+        <section id="home_screen" class="text-white min-h-screen flex  justify-center items-center ">
+            <div class="flex flex-col justify-center items-center gap-y-6 ">
+                <hh class="text-3xl md:text-6xl poppins-bold">My Alphabet Game</hh>
+            <p>Unleash your keyboard kun g ful: "Enter" to play</p>
+            <button onclick="play()" class="btn">Start Now</button>
+            </div>
+        </section>
+        <!-- Playground start -->
+        <section id="playGround" class=" hidden">
+            <div class="flex flex-col items-center gap-8 pt-8 ">
+                <!-- screen -->
+                <div id="artBoard" class="artboard flex flex-col items-center artboard-horizontal w-full md:w-2/3 h-44 md:h-60 border-[20px] rounded-2xl border-gray-600  opacity-90 bg-[#FFFFFFB3] ">
+                   
+                    <div class="flex justify-center ">
+                        <p class="bg-gray-900 text-white px-6 py-2 rounded-b-xl">Don't watch keyboard while playing...</p>
+                    </div>
+                    <div class="flex justify-center items-center h-full ">
+
+                        <p id="current_alphabet" class="text-6xl font-bold uppercase">Y</p>
+                    </div>
+                </div>
+
+                <!-- keyboard start -->
+               <div>
+                <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="q" class="kbd">q</kbd>
+                    <kbd id="w" class="kbd">w</kbd>
+                    <kbd id="e" class="kbd">e</kbd>
+                    <kbd id="r" class="kbd">r</kbd>
+                    <kbd id="t" class="kbd">t</kbd>
+                    <kbd id="y" class="kbd">y</kbd>
+                    <kbd id="u" class="kbd">u</kbd>
+                    <kbd id="i" class="kbd">i</kbd>
+                    <kbd id="o" class="kbd">o</kbd>
+                    <kbd id="p" class="kbd">p</kbd>
+                  </div> 
+                  <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="a" class="kbd">a</kbd>
+                    <kbd id="s" class="kbd">s</kbd>
+                    <kbd id="d" class="kbd">d</kbd>
+                    <kbd id="f" class="kbd">f</kbd>
+                    <kbd id="g" class="kbd">g</kbd>
+                    <kbd id="h" class="kbd">h</kbd>
+                    <kbd id="j" class="kbd">j</kbd>
+                    <kbd id="k" class="kbd">k</kbd>
+                    <kbd id="l" class="kbd">l</kbd>
+                  </div> 
+                  <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="z" class="kbd">z</kbd>
+                    <kbd id="x" class="kbd">x</kbd>
+                    <kbd id="c" class="kbd">c</kbd>
+                    <kbd id="v" class="kbd">v</kbd>
+                    <kbd id="b" class="kbd">b</kbd>
+                    <kbd id="n" class="kbd">n</kbd>
+                    <kbd id="m" class="kbd">m</kbd>
+                    <kbd id="/" class="kbd">/</kbd>
+                  </div>
+               </div>
+                <!-- keyboard end -->
+                <!-- button start-->
+                <div class="flex justify-between w-3/4">
+                    <button class="btn rounded-full bg-purple-400 text-white px-4">
+                        Life
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                       <span id="current_life">5</span>
+                      </button>
+                      <button class="btn rounded-full bg-purple-400 text-white px-4">
+                        Score
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                        <span id="current_score">0</span>
+                      </button>
+                </div>
+                <!-- button end-->
+            </div>
+        </section>
+        <!-- Result start -->
+        <section id="result" class=" flex justify-center items-center min-h-screen hidden">
+            <div class="text-white flex flex-col justify-center items-center gap-3 0 bg-gradient-to-r from-purple-300 via-purple-500 to-purple-800 p-3 rounded-lg">
+                <h4 class="text-2xl font-bold text-black">Game Over!!</h4>
+                <h1 class="text-6xl ">
+                    <span class="font-bold">Score:</span>
+                    <span id="result_score">14</span>
+                </h1>
+                <button onclick="startAgain()" class="btn bg-[green] text-white border-0">Start Again</button>
+                <p>practice makes you pro</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="./script//common.js"></script>
+    <script src="./script/alpha-class.js"></script>
+</body>
+</html>
